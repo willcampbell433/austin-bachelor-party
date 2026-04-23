@@ -139,6 +139,50 @@
         @keyframes fall {
             to { transform: translateY(110vh) rotate(360deg); }
         }
+        .loadout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .loadout-card {
+            background: #2a161d;
+            border: 2px solid #ff6b35;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 0 #004e89;
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .loadout-card:hover {
+            transform: scale(1.05) rotate(-2deg);
+            background: #ff6b35;
+            color: #1a0f14;
+        }
+        .loadout-card h4 {
+            margin: 0 0 10px 0;
+            color: #f7c59f;
+            text-transform: uppercase;
+        }
+        .loadout-card:hover h4 {
+            color: #1a0f14;
+        }
+        .loadout-card .guns {
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        @keyframes shoot {
+            0% { left: -50px; }
+            100% { left: 110vw; }
+        }
+        .bullet {
+            position: fixed;
+            font-size: 2.5em;
+            z-index: 9999;
+            animation: shoot 0.3s linear forwards;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -250,6 +294,50 @@
             <li>Phones charged.</li>
             <li style="color: #ff007f;"><strong>WATCH OUT FOR THE RAINEY STREET RIPPER.</strong></li>
         </ul>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px dashed #004e89;">
+            <h2>💥 THE ARMORY: RANGE LOADOUTS 💥</h2>
+            <marquee scrollamount="20" style="background:#d00000; color:#fff; border-color:#fff; padding: 10px 0; font-size: 1.2em;">🔫 HK MP5 💥 HK MP5K 💥 HK UMP-9 💥 SUPPRESSED AR 💥 AKM 💥 FN P90 💥 VECTOR UZI 💥 KRISS VECTOR 💥 IWI TAVOR 🔫</marquee>
+            
+            <div style="text-align: left; background: #2a161d; padding: 15px; border-radius: 5px; border-left: 5px solid #ff007f; margin-bottom: 20px;">
+                <h3 style="margin-top: 0; color: #00e5ff;">THE RECON (What Reviews Say)</h3>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>MP5:</strong> Universal crowd favorite (John Wick, Die Hard). Low recoil, everyone loves it.</li>
+                    <li><strong>Suppressed AR:</strong> The sleeper pick. Quieter, controllable, great video.</li>
+                    <li><strong>AK Full-Auto:</strong> Loud & brutal. Divisive but iconic.</li>
+                    <li><strong>P90:</strong> Most IG-worthy. Nobody has shot one before.</li>
+                    <li><strong>Vector Uzi:</strong> Kicks more than you expect. Great for short bursts & laughs.</li>
+                </ul>
+            </div>
+
+            <div style="text-align: left; background: #004e89; color: #f4ebd9; padding: 15px; border-radius: 5px; border: 2px solid #f7c59f; margin-bottom: 20px;">
+                <h3 style="margin-top: 0; color: #fff;">DAY-OF TIPS</h3>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>NO DRINKS BEFORE THE RANGE.</strong> Strict sobriety enforced. Shoot the machine guns early.</li>
+                    <li><strong>Rotate the guns:</strong> Don't have all 11 guys shoot the same 3 guns. Mix it up so everyone has different stories and footage.</li>
+                    <li><strong>Record 3rd Person:</strong> Have someone else record your mag dump. 3rd person footage > 1st person footage.</li>
+                    <li><strong>Groom privilege:</strong> Groom goes first on each gun for the "first shot" photos.</li>
+                    <li><strong>Pool the leftovers:</strong> Pool leftover ammo at the end. Whoever loved a gun the most gets to rip one more mag.</li>
+                </ul>
+            </div>
+
+            <h3 style="color: #ff6b35;">SQUAD LOADOUTS (Click to Test Fire)</h3>
+            <div class="loadout-grid">
+                <div class="loadout-card" onclick="testFire()"><h4>Will (Groom)</h4>Bucket List<br><span class="guns">MP5 • Suppressed AR • P90</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>Sam (Best Man)</h4>Mag Dump<br><span class="guns">AK • MP5 • Uzi</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>John Muth</h4>John Wick<br><span class="guns">Suppressed AR • MP5 • UMP-9</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>Pat</h4>Cold War<br><span class="guns">AK • Uzi • MP5</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>Matt</h4>Sci-Fi<br><span class="guns">P90 • KRISS Vector • Tavor</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>Conor Moran</h4>Heavy Hitters<br><span class="guns">UMP-9 • AK • Suppressed AR</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>John Moran</h4>Compact Chaos<br><span class="guns">MP5K • Uzi • P90</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>Ryan</h4>Call of Duty<br><span class="guns">MP5 • AK • P90</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>Shaun</h4>German Engineering<br><span class="guns">MP5 • UMP-9 • MP5K</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>Anthony</h4>Hollywood Arsenal<br><span class="guns">Suppressed AR • MP5 • Uzi</span></div>
+                <div class="loadout-card" onclick="testFire()"><h4>Dylan</h4>Mag Rat Finale<br><span class="guns">P90 • AK • KRISS Vector</span></div>
+            </div>
+            
+            <button class="btn" style="width: 100%; margin-top: 20px; font-size: 1.2em; background: #d00000; border-color: #fff;" onclick="testFire()">🔥 TEST FIRE ARSENAL 🔥</button>
+        </div>
         
         <br>
         <button class="btn" onclick="makeItRain()">LFG YEEHAW</button>
@@ -295,6 +383,24 @@
                     // cleanup
                     setTimeout(() => el.remove(), 4000);
                 }, i * 100);
+            }
+        }
+
+        function testFire() {
+            // Flash screen
+            document.body.style.backgroundColor = '#d00000';
+            setTimeout(() => document.body.style.backgroundColor = '#1a0f14', 50);
+
+            // Add bullets
+            for(let i=0; i<5; i++) {
+                setTimeout(() => {
+                    const bullet = document.createElement('div');
+                    bullet.innerText = '💨';
+                    bullet.className = 'bullet';
+                    bullet.style.top = (Math.random() * 80 + 10) + 'vh';
+                    document.body.appendChild(bullet);
+                    setTimeout(() => bullet.remove(), 300);
+                }, i * 50);
             }
         }
     </script>
