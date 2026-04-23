@@ -6,109 +6,106 @@
     <title>SO LONG PARTNER 🤠</title>
     <style>
         body {
-            background-color: #0b0c10;
-            color: #66fcf1;
+            background-color: #1a0f14;
+            color: #f4ebd9;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
             margin: 0;
             padding: 20px;
-            background-image: linear-gradient(0deg, #0b0c10 0%, #1f2833 100%);
+            background-image: linear-gradient(180deg, #1a0f14 0%, #3a1c24 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
         h1 {
-            color: #ff007f;
+            color: #ff6b35;
             text-transform: uppercase;
-            font-size: 3em;
-            text-shadow: 2px 2px 0px #00e5ff, -2px -2px 0px #ffff00;
+            font-size: 3.5em;
+            text-shadow: 3px 3px 0px #004e89, -2px -2px 0px #f7c59f;
             margin-bottom: 5px;
-            animation: glitch 1.5s infinite;
         }
         h2 {
-            color: #ffff00;
-            border-bottom: 2px dashed #ff007f;
+            color: #f7c59f;
+            border-bottom: 2px dashed #ff6b35;
             display: inline-block;
             padding-bottom: 5px;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(31, 40, 51, 0.8);
-            border: 3px solid #45a29e;
+            background: rgba(26, 15, 20, 0.9);
+            border: 3px solid #004e89;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 20px #45a29e;
+            box-shadow: 0 0 20px #ff6b35;
         }
         marquee {
             font-size: 1.5em;
-            color: #ff007f;
+            color: #ff6b35;
             font-weight: bold;
             margin: 20px 0;
-            background: #1f2833;
+            background: #004e89;
             padding: 10px;
-            border: 1px solid #66fcf1;
+            border: 2px solid #f7c59f;
+            border-radius: 5px;
         }
         .btn {
-            background-color: #ff007f;
-            color: white;
+            background-color: #ff6b35;
+            color: #1a0f14;
             padding: 15px 30px;
             text-decoration: none;
             font-size: 1.5em;
             font-weight: bold;
-            border: 3px solid #ffff00;
+            border: 3px solid #f7c59f;
             display: inline-block;
-            margin: 20px;
+            margin: 10px;
             cursor: pointer;
-            box-shadow: 4px 4px 0px #ffff00;
+            box-shadow: 4px 4px 0px #004e89;
             transition: 0.1s;
+            text-transform: uppercase;
         }
         .btn:active {
-            box-shadow: 0px 0px 0px #ffff00;
+            box-shadow: 0px 0px 0px #004e89;
             transform: translate(4px, 4px);
         }
         .day {
             text-align: left;
-            background: #1f2833;
+            background: #2a161d;
             padding: 15px;
             margin: 15px 0;
-            border-left: 5px solid #ff007f;
+            border-left: 5px solid #ff6b35;
+            border-radius: 0 10px 10px 0;
         }
         .day h3 {
             margin-top: 0;
-            color: #00e5ff;
+            color: #f7c59f;
             text-transform: uppercase;
         }
         ul {
             list-style-type: square;
         }
         .warning {
-            background: #ff007f;
+            background: #d00000;
             color: #fff;
-            padding: 10px;
+            padding: 15px;
             font-weight: bold;
             border-radius: 5px;
-            animation: flash 1s infinite alternate;
+            font-size: 1.2em;
+            border: 2px dashed #ffff00;
+            animation: pulse 1s infinite alternate;
         }
         .info-box {
-            background: #45a29e;
-            color: #0b0c10;
+            background: #004e89;
+            color: #f4ebd9;
             padding: 15px;
             margin: 20px 0;
             border-radius: 5px;
             text-align: left;
             font-weight: bold;
+            border: 2px solid #ff6b35;
         }
-        @keyframes glitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-2px, 2px) }
-            40% { transform: translate(-2px, -2px) }
-            60% { transform: translate(2px, 2px) }
-            80% { transform: translate(2px, -2px) }
-            100% { transform: translate(0) }
-        }
-        @keyframes flash {
-            from { background: #ff007f; }
-            to { background: #d00000; }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.02); box-shadow: 0 0 15px #d00000; }
         }
         .crew {
             display: flex;
@@ -117,37 +114,57 @@
             gap: 10px;
         }
         .crew-member {
-            background: #45a29e;
-            color: #0b0c10;
-            padding: 5px 10px;
+            background: #f7c59f;
+            color: #1a0f14;
+            padding: 8px 12px;
             font-weight: bold;
             border-radius: 3px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .crew-member:hover {
+            transform: rotate(5deg) scale(1.1);
+            background: #ff6b35;
+            color: white;
+        }
+        .emoji-rain {
+            position: fixed;
+            top: -50px;
+            font-size: 2em;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+            z-index: 9999;
+        }
+        @keyframes fall {
+            to { transform: translateY(110vh) rotate(360deg); }
         }
     </style>
 </head>
 <body>
 
-    <h1>🚨 SO LONG PARTNER 🤠 🚨</h1>
-    <h2 style="color:#00e5ff;">Austin, TX | April 23-26, 2026</h2>
+    <h1>🍻 SO LONG PARTNER 🤠 🍻</h1>
+    <h2 style="color:#f7c59f;">Austin, TX | April 23-26, 2026</h2>
     
-    <marquee scrollamount="15">🍻 11 GUYS. 1 CITY. ZERO SURVIVAL GUARANTEE. 🍻 NO ONE DISAPPEARS SOLO. 🍻 HYDRATE OR DIE. 🍻</marquee>
+    <marquee scrollamount="12">🌵 11 GUYS. 1 CITY. ZERO SURVIVAL GUARANTEE. 🥩 NO ONE DISAPPEARS SOLO. 🌵 HYDRATE OR DIE. 🤠</marquee>
 
     <div class="container">
         <a href="https://www.airbnb.com/rooms/31609555?viralityEntryPoint=1&s=76" target="_blank" class="btn">📍 THE HQ (Airbnb)</a>
         
         <h2>THE SQUAD</h2>
-        <div class="crew">
-            <div class="crew-member">Will (The Groom)</div>
-            <div class="crew-member">Sam</div>
-            <div class="crew-member">John Muth</div>
-            <div class="crew-member">Pat</div>
-            <div class="crew-member">Matt</div>
-            <div class="crew-member">Conor Moran</div>
-            <div class="crew-member">John Moran</div>
-            <div class="crew-member">Ryan</div>
-            <div class="crew-member">Shaun</div>
-            <div class="crew-member">Anthony</div>
-            <div class="crew-member">Dylan</div>
+        <p style="font-size: 0.9em; font-style: italic;">(Click a name to see if they owe a shot)</p>
+        <div class="crew" id="crew-list">
+            <div class="crew-member" onclick="checkShot(this)">Will (The Groom)</div>
+            <div class="crew-member" onclick="checkShot(this)">Sam</div>
+            <div class="crew-member" onclick="checkShot(this)">John Muth</div>
+            <div class="crew-member" onclick="checkShot(this)">Pat</div>
+            <div class="crew-member" onclick="checkShot(this)">Matt</div>
+            <div class="crew-member" onclick="checkShot(this)">Conor Moran</div>
+            <div class="crew-member" onclick="checkShot(this)">John Moran</div>
+            <div class="crew-member" onclick="checkShot(this)">Ryan</div>
+            <div class="crew-member" onclick="checkShot(this)">Shaun</div>
+            <div class="crew-member" onclick="checkShot(this)">Anthony</div>
+            <div class="crew-member" onclick="checkShot(this)">Dylan</div>
         </div>
 
         <div style="margin-top:20px;">
@@ -160,7 +177,7 @@
                 <li><strong>Host:</strong> Preston is the GOAT.</li>
                 <li><strong>Address:</strong> 901 Spence St, Austin, TX 78702</li>
                 <li><strong>Check-in:</strong> House is ready whenever. Ryan gets there first. <strong>Code: 5215</strong> (palm on the lock, then enter).</li>
-                <li><strong>Groceries:</strong> HEB on 7th or Target on 5th. Ryan, if you're chilling early, please grab beer, seltzers, ice, snacks, and breakfast stuff.</li>
+                <li><strong>Groceries:</strong> HEB on 7th or Target on 5th. Ryan, please grab beer, seltzers, ice, snacks, and breakfast stuff.</li>
                 <li><strong>Expenses:</strong> Put whatever you spend in the Venmo group immediately and tag everyone involved.</li>
                 <li><strong>Transport:</strong> We are using <strong>Fetii</strong> (Uber XL for groups). Schedule vans for 15 in advance.</li>
             </ul>
@@ -169,7 +186,7 @@
         <h2>THE ITINERARY</h2>
 
         <div class="day">
-            <h3>🥃 THURSDAY: The Kickoff</h3>
+            <h3>🥩 THURSDAY: The Kickoff</h3>
             <ul>
                 <li><strong>Arrivals:</strong> Get to the house. Settle in.</li>
                 <li><strong>7:30 PM:</strong> Dinner @ Banger’s Sausage House & Beer Garden. NFL Draft starts at 8:00 PM.</li>
@@ -224,10 +241,40 @@
         </ul>
         
         <br>
-        <button class="btn" onclick="alert('HYDRATE BRO')">LFG</button>
+        <button class="btn" onclick="makeItRain()">LFG YEEHAW</button>
+        <button class="btn" style="background:#d00000; border-color:#fff;" onclick="alert('DRINK A GLASS OF WATER IMMEDIATELY AND FIND SAM.')">🚨 EMERGENCY SOS 🚨</button>
     </div>
 
-    <p style="margin-top: 30px; font-size: 0.8em; color: #45a29e;">Built by Larry 🦞 (The AI who actually reads the group chat)</p>
+    <p style="margin-top: 30px; font-size: 0.8em; color: #f7c59f;">Built by Larry 🦞 (The AI who actually reads the group chat)</p>
 
+    <script>
+        function checkShot(element) {
+            const owes = Math.random() > 0.7; // 30% chance
+            if(element.innerText.includes("Will")) {
+                alert("The Groom drinks for free. Someone else take a shot.");
+            } else if(owes) {
+                alert("🚨 PENALTY! " + element.innerText + " owes the group a shot! 🚨");
+            } else {
+                alert(element.innerText + " is safe... for now.");
+            }
+        }
+
+        function makeItRain() {
+            const emojis = ['🍻', '🌮', '🤠', '🥩', '🌵', '🚤', '🎯'];
+            for(let i=0; i<30; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                    el.className = 'emoji-rain';
+                    el.style.left = Math.random() * 100 + 'vw';
+                    el.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    document.body.appendChild(el);
+                    
+                    // cleanup
+                    setTimeout(() => el.remove(), 4000);
+                }, i * 100);
+            }
+        }
+    </script>
 </body>
 </html>
