@@ -296,7 +296,13 @@
             <li style="color: #ffff00;"><strong>NO UBERS OR LYFTS:</strong> You are only allowed to take Waymo Robo Taxis. If you get caught taking a human-driven Uber or Lyft, you owe a shot in front of everybody immediately. (Fetii van exclusions apply for the boat).</li>
         </ul>
 
-        <button class="btn" style="width: 100%; margin-top: 20px; font-size: 1.2em; background: #004e89; border-color: #fff;" onclick="whoOwesGroom()">🎯 WHO OWES THE GROOM A SHOT? 🎯</button>
+        <div style="margin-top: 40px; padding: 20px; border: 2px dashed #ffff00; border-radius: 10px; background: rgba(0,0,0,0.5);">
+            <h2 style="color:#ffff00; border-bottom:none; margin-top:0;">🎯 SHOT ROULETTE 🎯</h2>
+            <p id="current-debtor" style="font-size: 2em; color: #ff007f; font-weight: bold; margin: 10px 0; text-shadow: 2px 2px 0px #000;">NOBODY (YET)</p>
+            <p style="font-size: 0.9em; color: #f4ebd9; margin-bottom: 20px;">Who is buying the groom his next shot?</p>
+            <button class="btn" id="spin-btn" style="background: #004e89; border-color: #fff; font-size: 1.2em; width: 100%; margin: 0 0 10px 0;" onclick="whoOwesGroom()">SPIN THE WHEEL</button>
+            <button class="btn" id="paid-btn" style="background: #45a29e; border-color: #fff; font-size: 1.2em; display: none; width: 100%; margin: 0;" onclick="clearDebt()">MARK AS PAID 🥃</button>
+        </div>
 
         <div style="margin-top: 40px; padding-top: 20px; border-top: 2px dashed #004e89;">
             <h2>💥 THE ARMORY: RANGE LOADOUTS 💥</h2>
@@ -396,7 +402,16 @@
             document.body.style.backgroundColor = '#f7c59f';
             setTimeout(() => document.body.style.backgroundColor = '#1a0f14', 100);
             
-            alert("🚨 THE WHEEL HAS SPOKEN 🚨\n\n" + target + " owes the Groom a shot IMMEDIATELY.");
+            document.getElementById('current-debtor').innerText = target.toUpperCase();
+            document.getElementById('spin-btn').style.display = 'none';
+            document.getElementById('paid-btn').style.display = 'inline-block';
+        }
+
+        function clearDebt() {
+            alert("Debt cleared! " + document.getElementById('current-debtor').innerText + " bought the shot. Spin again!");
+            document.getElementById('current-debtor').innerText = "NOBODY (YET)";
+            document.getElementById('spin-btn').style.display = 'inline-block';
+            document.getElementById('paid-btn').style.display = 'none';
         }
 
         function testFire() {
